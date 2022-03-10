@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>解构数组</title>
+</head>
+<body>
+<script>
+    // let arr=[10,20,30];
+    // let a=arr[0],b=arr[1],c=arr[2];
+    // console.log(a,b,c);
+
+    // 解构数组
+    // let [z,b,c]=arr;
+    // console.log(z,b,c);
+    // 解析数组中某个元素，使用占位符
+    // let [,,a]=arr;
+    // console.log(a);
+
+    // 解构数组放到变量里去，这里不需要添加小括弧，因为数组使用的是中括号
+    // let a,b,c;
+    // [a,b,c]=arr;
+    // console.log(a,b,c);
+
+    // 解构数组的同时添加数组元素
+    // let [a,b,c,d=40,e]=arr;
+    // console.log(a,b,c,d,e);
+
+    // 解构数组的嵌套
+    let book=['PHP','JAVA',['JavaScript','CSS','HTML']];
+    // let [a,,[,,j]]=book;
+    // console.log(a,j);
+
+    // 解构与扩展运算符一起使用，有三个点是二维数组，要使用[0][0]
+    // let [a,,...html]=book;
+    // console.log(a,html[0][1]);
+
+    // 解构不与扩展运算符一起使用，没有三个点是一维数组，要使用[0]
+    // let [a,,html]=book;
+    // console.log(a,html[1]);
+
+    // 解构与扩展运算符一起使用，通过[]将二维数组转换成一维数组，使用[0]
+    // let [a,,[...html]]=book;
+    // console.log(a,html[1]);
+
+    // 解构与扩展运算符一起使用，简单实现浅拷贝
+    let [...newBooks]=book;
+    console.log(...newBooks);
+</script>
+</body>
+</html>

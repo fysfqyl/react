@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>箭头函数</title>
+</head>
+<body>
+<script>
+    // function person(){
+    //     console.log("大家好！")
+    // }
+
+    //使用箭头函数
+    // let person=()=>{
+    //     console.log("大家好！")
+    // }
+    // person();
+
+    //使用箭头函数如何传递参数,如果只有一个参数可以省略箭头前的括号
+    // let person=(name,age)=>{
+    //     console.log(name,age);
+    // }
+    // person("张三",20);
+
+    //使用箭头函数return
+    // let person=()=>{
+    //     return "大家好！"
+    // }
+    // console.log(person());
+
+    //arguments
+    //es5
+    // function person(){
+    //     let args=arguments;
+    //     console.log(args);
+    // }
+
+    //箭头函数替换使用arguments
+    // let person=(...args)=>{
+    //     console.log(args);
+    // }
+    // person(1,2,3,'张三');
+
+    //返回对象字面量，花括号外的小括号不可以漏掉
+    //  let person=()=>({name:"李四",age:30
+        // function person(){
+        // return ({name:"李四",age:30})
+    // }
+    // )
+    // console.log(person());
+
+     //this指向
+    //通过箭头函数与bind方法的结合修改this指向的对象
+    //es5
+    // let person={
+    //     name:"张三",
+    //     getName:function (){
+    //         let _this=this;
+    //         window.setTimeout(function (){
+    //             console.log(this);
+    //             console.log(this.name);
+    //         },300);
+    //     }
+    // }
+    // let getName=person.getName.bind(person);
+    // getName();
+
+    //箭头函数
+    let person={
+        name:"张三",
+        getName:function (){
+            setTimeout(()=>{
+                console.log(this);
+                console.log(this.name);
+            },300);
+        }
+    }
+    let getName=person.getName.bind(person);
+    getName();
+</script>
+</body>
+</html>

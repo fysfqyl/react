@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模块化</title>
+</head>
+<body>
+<script type="module">
+    import {name as oldName,age,URL,getName} from "./global.js";
+    // let name="王五";这是解决命名冲突问题，新加的变量，为了取出冲突变量，添加as oldName，非使用解构的时候的冒号了，as导出的时候起别名的方式使用更多
+    // console.log(name,oldName);
+    // console.log(age);
+    // console.log(URL);
+    // console.log(getName());
+
+    //导入整个模块，带星号就变成对象了
+    //  import * as person from "./global.js";
+    // console.log(person.name);
+    // console.log(person.age);
+    // console.log(person.URL);
+    // console.log(person.getName());
+
+    //使用default模块化导出
+    import personName from './default.js';
+    console.log(personName);
+
+
+
+</script>
+</body>
+</html>
